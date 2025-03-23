@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="first">Username:</label>
+    <input type="text" id="first" name="first" placeholder="Enter your Username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    
+    <button id="submit">Submit</button>
+
+    <script>
+        const email = document.getElementById("email");
+        const submit = document.getElementById("submit");
+
+        submit.addEventListener("click", function() {
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Correct email pattern
+            const match = re.test(email.value); // Use email.value to get user input
+
+            if (!match) {
+                alert("Invalid email");
+            } else {
+                alert("Valid email");
+            }
+        });
+    </script>
+</body>
+</html>
